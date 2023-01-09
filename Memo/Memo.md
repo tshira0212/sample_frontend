@@ -25,3 +25,7 @@
   - ![](2023-01-09-22-35-45.png)
   - TESTも通りました
   - ![](2023-01-09-22-34-21.png)
+
+- 参考
+  - https://qiita.com/suzu1997/items/e4ee2fc1f52fbf505481#%EF%B8%8E%E3%83%9A%E3%83%BC%E3%82%B8%E9%81%B7%E7%A7%BB%E3%81%AE%E3%83%86%E3%82%B9%E3%83%88
+  - https://dev.classmethod.jp/articles/introduction-to-nextjs/
