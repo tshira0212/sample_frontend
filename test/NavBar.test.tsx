@@ -7,6 +7,7 @@
  // next-page-testerからgetPageとinitTestHelpersをインポート
  import { getPage } from 'next-page-tester';
  import { initTestHelpers } from 'next-page-tester'; // 初期設定を行うもの
+import { act } from 'react-dom/test-utils';
 
  // next-page-testerを使用するために実行しておく
  initTestHelpers();
