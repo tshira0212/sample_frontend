@@ -1,4 +1,5 @@
 import News from "../../components/News";
+import ToDo from "../../components/ToDo";
 
 const news = [
   {
@@ -15,5 +16,7 @@ const news = [
 
 
 export default function FirstPost() {
-    return <div><h1>Blog Page</h1><News news={news} /></div>
+    return <div><h1>Blog Page</h1><News news={news} />
+    <ToDo></ToDo>
+    </div>
   }
