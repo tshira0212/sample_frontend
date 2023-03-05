@@ -8,10 +8,10 @@ function App() {
   const { data, error } = useSWR('https://jsonplaceholder.typicode.com/todos/', fetcher)
 
   // データに応じた処理
-  if (error) return <div>Error!</div>
+  if (error) return <div>Error!:{error.status}</div>
   if (!data) return <div>loading...</div>
 
-  console.log('data', data)
+  console.log('data', error)
 
   return (
     <div className="App">
