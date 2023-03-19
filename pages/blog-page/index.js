@@ -1,29 +1,16 @@
 import { GetStaticProps } from "next";
 import News from "../../components/News";
 import ToDo from "../../components/ToDo";
+import useSWR from 'swr'
+ 
+// swrはこういったfetcherが必要
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
-const news = [
-  {
-    id: "1",
-    title: "test1",
-    content: "texttext1",
-  },
-  {
-    id: "2",
-    title: "test2",
-    content: "texttext2",
-  },
-];
-
-export async function getStaticProps() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts/?_limit=10')
-  const posts = await res.json()
-  return {
-    props:{posts},
-  }
-}
-
-function Blog({ posts }) {
+export async function Blog() {
+  const {posts,error} = useSWR('https://jsonplaceholder.typicode.com/posts/?_limit=10',fetcher)
+    // データに応じた処理
+    if (error) return <div>Error!:{error.status}</div>
+    if (!posts) return <div>loading...</div>
   return (
     <ul>
       {posts.map((post) => (

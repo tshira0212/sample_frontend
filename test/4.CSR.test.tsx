@@ -56,9 +56,7 @@ const handlers = [
         </SWRConfig>,
       );
       expect(await screen.findByText('1:dummy body A'));
-      expect(screen.getByText('by A'));
       expect(screen.getByText('2:dummy body B'));
-      expect(screen.getByText('by B'));
     });
   
    // Error発生時

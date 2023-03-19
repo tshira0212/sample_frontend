@@ -4,11 +4,8 @@ import '@testing-library/jest-dom/extend-expect'
 import Home from '../pages'
 
 describe('Home', () => {
-  it('renders a heading', () => {
+  it('0.HomePageRenderingTest', () => {
     render(<Home />)
-    const heading = screen.getByRole('heading', {
-      name: /welcome to next\.js/i,
-    })
-    expect(heading).toBeInTheDocument()
+    expect(screen.getByText('Unit Test Sample')).toBeInTheDocument()
   })
 })

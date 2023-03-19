@@ -10,7 +10,7 @@ import { getPage } from "next-page-tester";
 // どの URL のリクエストに対して、どのようなレスポンスを返すのかを定義
 const handlers = [
     rest.get(
-      'https://jsonplaceholder.typicode.com/posts/?_limit=10',
+      'https://jsonplaceholder.typicode.com/users',
       (req, res, ctx) => {
         return res(
           // 以下はダミーデータ
@@ -19,14 +19,14 @@ const handlers = [
             {
               userId: 1,
               id: 1,
-              title: 'dummy title 1',
-              body: 'dummy body 1',
+              username: 'dummyname1',
+              email: 'dummy@dummy.com',
             },
             {
               userId: 2,
               id: 2,
-              title: 'dummy title 2',
-              body: 'dummy body 2',
+              username: 'dummyname2',
+              email: 'dummy@dummy.com',
             },
           ]),
         );
@@ -55,14 +55,15 @@ const handlers = [
   describe('Blog Page', () => {
     it('Should render the list of blogs pre-fetched by GetStaticProps', async () => {
       const { page } = await getPage({
-        route: '/blog-page',
+        route: '/GetStaticPropsPage',
       });
    // renderでpageの内容を取得する
       render(page);
    // ブログページのテキストが取得できるまで待機する
-   //   expect(await screen.findByText('Blog Page')).toBeInTheDocument();
+      expect(await screen.findByText('2.GetStaticProps')).toBeInTheDocument();
    // ダミーデータのレスポンスがDOMに表示されているかを確認する
-      expect(screen.getByText('dummy title 1')).toBeInTheDocument();
-      expect(screen.getByText('dummy title 2')).toBeInTheDocument();
+      expect(screen.getByText('ID:1')).toBeInTheDocument();
+      expect(screen.getByText('ユーザー名：dummyname1')).toBeInTheDocument();
+      expect(screen.getByText('メールアドレス：dummy@dummy.com')).toBeInTheDocument();
     });
   });

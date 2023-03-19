@@ -14,7 +14,7 @@ import { act } from 'react-dom/test-utils';
  
  // Linkタグに対するページ遷移のテストを実施
  // describe でテストタイトルを設定
- describe('Navigation by Link', () => {
+ describe('1.Navigation by Link', () => {
    // next-page-testerを使うには、関数をasyncにする
    it('Should route to selected page in navar', async () => {
      const { page } = await getPage({
@@ -23,8 +23,8 @@ import { act } from 'react-dom/test-utils';
      render(page); // HTMLの構造を取得
  
      // getByTestIdでテストIDを取得し、それに対しクリックのシミュレーションを実施
-     userEvent.click(screen.getByTestId('blog-nav'));
+     userEvent.click(screen.getByTestId('nav-test'));
      // 非同期の場合は、findByTextでテキストを検索
-     expect(await screen.findByText('Blog Page')).toBeInTheDocument();
+     expect(await screen.findByText('1.SimpleNavPage')).toBeInTheDocument();
    });
  });
