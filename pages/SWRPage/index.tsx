@@ -1,14 +1,14 @@
 import ToDo from "../../components/ToDo"
 
-const CSRPage = () => {
+const SWRPage = () => {
 	return (
 		<>
 			<header>
-				<h2>4.CSRPage</h2>
+				<h2>4.SWRPage</h2>
 			</header>
 			<ToDo/>
 		</>
 	)
 }
 
-export default CSRPage
+export default SWRPage

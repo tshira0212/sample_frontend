@@ -35,9 +35,9 @@ export default function Home() {
         </h1>
 
         <h1 className="title">
-          <Link href="/CSRPage"
+          <Link href="/SWRPage"
          className='text-gray-300 hover:bg-gray-700 px-3 py-2 rounded'>
-            4.CSRTest
+            4.SWRTest
           </Link>
         </h1>
 
